@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { listaRegiones, Region } from 'src/app/region';
-import { ActivatedRoute, Route} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Clima } from 'src/app/clima';
 
 @Component({
   selector: 'app-climas',
@@ -10,12 +11,15 @@ import { ActivatedRoute, Route} from '@angular/router';
 export class ClimasComponent implements OnInit {
   listaRegion:Region[] = listaRegiones;
   celsius:boolean= true;
-  active:any;
-
+  listaClima:Clima[] = []
+  
   constructor(private rutaActiva:ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    
+    this.listaClima = this.listaRegion
+      .find((element:Region) => element.nombre == this.rutaActiva.snapshot.params.id)?.clima || []
+    console.log(this.rutaActiva.snapshot.params.id)
+    console.log(this.listaClima)
   }
 }

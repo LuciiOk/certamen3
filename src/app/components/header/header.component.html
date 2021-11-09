@@ -10,10 +10,14 @@
     </div>
     <ul id="climas">
       <li class="mx-4">
-        <button (click)="convertir(true)" >Celsius</button>
+        <button (click)="convertir(true)" 
+          [ngClass]="{rojo: celsius}"
+        >Celsius</button>
       </li>
       <li class="mx-4">
-        <button (click)="convertir(false)">fahrenheit</button>
+        <button (click)="convertir(false)"
+          [ngClass]="{rojo: !celsius}"
+        >fahrenheit</button>
       </li>
     </ul>
     <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs" id="regiones">
