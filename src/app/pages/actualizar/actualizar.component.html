@@ -22,21 +22,29 @@
             <br>
 
             <label for="Estado"> Estado del clima</label><br>
-            <div class="custom-control custom-radio">
-                <input type="radio" value="Soleado" class="custom-control-input" formControlName="Estado" id="Estado1" name="Estado">
-                <label for="Estado1" class="custom-control-label">Soleado</label>
+            <div class="form-check">
+                <input type="radio" value="Soleado" class="form-check-input" formControlName="Estado" id="Estado1" name="Estado"
+                    [ngClass]="{'is-valid': !formulario.controls['Estado'].invalid && (formulario.controls['Estado'].dirty || formulario.controls['Estado'].touched)}"
+                >
+                <label for="Estado1" class="form-check-label">Soleado</label>
             </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" value="Nublado" class="custom-control-input" formControlName="Estado" id="Estado2" name="Estado">
-                <label for="Estado2" class="custom-control-label">Nublado</label>
+            <div class="form-check">
+                <input type="radio" value="Nublado" class="form-check-input" formControlName="Estado" id="Estado2" name="Estado"
+                    [ngClass]="{'is-valid': !formulario.controls['Estado'].invalid && (formulario.controls['Estado'].dirty || formulario.controls['Estado'].touched)}"
+                >
+                <label for="Estado2" class="form-check-label">Nublado</label>
             </div>        
-            <div class="custom-control custom-radio">
-                <input type="radio" value="Lluvioso" class="custom-control-input" formControlName="Estado" id="Estado3" name="Estado">
-                <label for="Estado3" class="custom-control-label">Lluvioso</label>
+            <div class="form-check">
+                <input type="radio" value="Lluvioso" class="form-check-input" formControlName="Estado" id="Estado3" name="Estado"
+                    [ngClass]="{'is-valid': !formulario.controls['Estado'].invalid && (formulario.controls['Estado'].dirty || formulario.controls['Estado'].touched)}"
+                >
+                <label for="Estado3" class="form-check-label">Lluvioso</label>
             </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" value="Tormenta" class="custom-control-input" formControlName="Estado" id="Estado4" name="Estado">
-                <label for="Estado4" class="custom-control-label">Tormenta</label>
+            <div class="form-check">
+                <input type="radio" value="Tormenta" class="form-check-input" formControlName="Estado" id="Estado4" name="Estado"
+                    [ngClass]="{'is-valid': !formulario.controls['Estado'].invalid && (formulario.controls['Estado'].dirty || formulario.controls['Estado'].touched)}"
+                >
+                <label for="Estado4" class="form-check-label">Tormenta</label>
             </div>
             
             <br>
@@ -81,17 +89,20 @@
                 * Selecciona una opción
                 </div>
             </div>
-            
             <br>
             <label for="Estado"> Grados </label><br>
-            <div class="custom-control custom-radio">
-                <input type="radio" value="celsius" formControlName="Grados" class="custom-control-input"  id="Grados1" name="Grados" >
-                <label for="Grados1" class="custom-control-label">Celsius</label>
+            <div class="form-check">
+                <input type="radio" value="celsius" formControlName="Grados" class="form-check-input"  id="Grados1" name="Grados"
+                    [ngClass]="{'is-valid': !formulario.controls['Grados'].invalid && (formulario.controls['Grados'].dirty || formulario.controls['Grados'].touched)}"
+                >
+                <label for="Grados1" class="form-check-label">Celsius</label>
             </div>
 
-            <div class="custom-control custom-radio">
-                <input type="radio" value="fahrenheit" formControlName="Grados" class="custom-control-input" id="Grados2" name="Grados" >
-                <label for="Grados2" class="custom-control-label">fahrenheit</label>
+            <div class="form-check">
+                <input type="radio" value="fahrenheit" formControlName="Grados" class="form-check-input" id="Grados2" name="Grados" 
+                    [ngClass]="{'is-valid': !formulario.controls['Grados'].invalid && (formulario.controls['Grados'].dirty || formulario.controls['Grados'].touched)}"
+                >
+                <label for="Grados2" class="form-check-label">fahrenheit</label>
             </div>
 
             <div >

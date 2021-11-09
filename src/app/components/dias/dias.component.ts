@@ -18,6 +18,7 @@ export class DiasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.climas)
   }
 
   celciusFahrenheit (temp:number):number {
