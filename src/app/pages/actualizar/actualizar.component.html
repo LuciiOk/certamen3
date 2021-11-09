@@ -1,0 +1,110 @@
+<div class="container mt-3">
+    <div class="container">
+        <form [formGroup]="formulario" class="needs-validaton" (ngSubmit)="enviarDatos()" novalidate>
+
+            <label class="form-label" for="Region">Region a:</label><br>
+            <select class="form-select" id="Region" formControlName="Region" 
+                [ngClass]="{'is-invalid': formulario.controls['Region'].invalid && (formulario.controls['Region'].dirty || formulario.controls['Region'].touched)
+                , 'is-valid': formulario.controls['Region'].valid && (formulario.controls['Region'].dirty || formulario.controls['Region'].touched)}"
+            >
+                <option value=""> Selecciona una opcion</option>
+                <option value="Valparaiso"> Valparaiso</option>
+                <option value="Metropolitana"> Metropolitana</option>
+                <option value="BioBio"> BioBio</option>
+                <option value="Araucania"> Araucania</option>
+            </select>
+            <div *ngIf="formulario.controls['Region'].invalid && (formulario.controls['Region'].dirty || formulario.controls['Region'].touched)" class="invalid-feedback">
+                <div *ngIf="formulario.controls['Region'].hasError('required')">
+                * Selecciona una opción
+                </div>
+            </div>
+            
+            <br>
+
+            <label for="Estado"> Estado del clima</label><br>
+            <div class="custom-control custom-radio">
+                <input type="radio" value="Soleado" class="custom-control-input" formControlName="Estado" id="Estado1" name="Estado">
+                <label for="Estado1" class="custom-control-label">Soleado</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" value="Nublado" class="custom-control-input" formControlName="Estado" id="Estado2" name="Estado">
+                <label for="Estado2" class="custom-control-label">Nublado</label>
+            </div>        
+            <div class="custom-control custom-radio">
+                <input type="radio" value="Lluvioso" class="custom-control-input" formControlName="Estado" id="Estado3" name="Estado">
+                <label for="Estado3" class="custom-control-label">Lluvioso</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" value="Tormenta" class="custom-control-input" formControlName="Estado" id="Estado4" name="Estado">
+                <label for="Estado4" class="custom-control-label">Tormenta</label>
+            </div>
+            
+            <br>
+
+            <label for="Dia">Día</label><br>
+            <select class="form-select" id="Dia" formControlName="Dia" 
+                [ngClass]="{'is-invalid': formulario.controls['Dia'].invalid && (formulario.controls['Dia'].dirty || formulario.controls['Dia'].touched)
+                , 'is-valid': formulario.controls['Dia'].valid && (formulario.controls['Dia'].dirty || formulario.controls['Dia'].touched)}"
+            >
+                <option value=""> Selecciona una opcion</option>
+                <option value="Lunes"> Lunes</option>
+                <option value="Martes"> Martes</option>
+                <option value="Miercoles"> Miércoles</option>
+                <option value="Jueves"> Jueves</option>
+                <option value="Viernes"> Viernes</option>
+                <option value="Sabado"> Sábado</option>
+                <option value="Domingo"> Domingo</option>
+            </select>
+            <div *ngIf="formulario.controls['Dia'].invalid && (formulario.controls['Dia'].dirty || formulario.controls['Dia'].touched)" class="invalid-feedback">
+                <div *ngIf="formulario.controls['Dia'].hasError('required')">
+                * Selecciona una opción
+                </div>
+            </div>
+
+            <br>
+
+            <label for="Temperatura" class="form-label">Temperatura</label>
+            <input type="text" id="Temperatura" formControlName="Temperatura" class="form-control" placeholder="Temperatura"
+             [ngClass]="{'is-invalid': formulario.controls['Temperatura'].invalid && (formulario.controls['Temperatura'].dirty || formulario.controls['Temperatura'].touched),
+             'is-valid': formulario.controls['Temperatura'].valid && (formulario.controls['Temperatura'].dirty || formulario.controls['Temperatura'].touched)}">   
+            
+            <div *ngIf="formulario.controls['Temperatura'].invalid && (formulario.controls['Temperatura'].dirty || formulario.controls['Temperatura'].touched)" class="invalid-feedback">
+                <div *ngIf="formulario.controls['Temperatura'].hasError('required')">
+                    * obligatorio
+                  </div>
+            </div>
+            
+
+
+            <div *ngIf="formulario.controls['Grados'].invalid && (formulario.controls['Grados'].dirty || formulario.controls['Grados'].touched)" class="invalid-feedback">
+                <div *ngIf="formulario.controls['Grados'].hasError('required')">
+                * Selecciona una opción
+                </div>
+            </div>
+            
+            <br>
+            <label for="Estado"> Grados </label><br>
+            <div class="custom-control custom-radio">
+                <input type="radio" value="celsius" formControlName="Grados" class="custom-control-input"  id="Grados1" name="Grados" >
+                <label for="Grados1" class="custom-control-label">Celsius</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+                <input type="radio" value="fahrenheit" formControlName="Grados" class="custom-control-input" id="Grados2" name="Grados" >
+                <label for="Grados2" class="custom-control-label">fahrenheit</label>
+            </div>
+
+            <div >
+
+            </div>    
+
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col text-center">
+                      <button type="submit" [disabled]="!formulario.valid" class="col-12 col-sm-6 col-md-6 col-lg-6 btn-lg btn btn-block btn-dark mt-4">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </form>    
+    </div>    
+</div>    

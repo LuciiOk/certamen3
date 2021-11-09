@@ -1,0 +1,37 @@
+<header class="mx-4 my-3">
+    <div class="container-fluid">
+      <h1 class="my-3 d-inline">
+        <img src="../../../assets/pngegg.png" width="50" height="50" class="d-inline-block align-top" alt="logo-climas">  
+        Clima
+      </h1>
+    <h2 class="d-inline float-right">
+      Chile - {{active.nombre}}
+    </h2>
+    </div>
+    <ul id="climas">
+      <li class="mx-4" >
+        <button (click)="convertir(true)" >Celsius</button>
+      </li>
+      <li class="mx-4">
+        <button (click)="convertir(false)">fahrenheit</button>
+      </li>
+    </ul>
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs" id="regiones">
+      <ng-container *ngFor="let region of listaRegion">
+          <li [ngbNavItem]="region">
+            <a ngbNavLink>
+              {{region.nombre}}
+            </a>
+            <ng-template ngbNavContent >
+                <app-dias 
+                  [climas]="region.clima" 
+                  [celsius]="this.celsius"
+                  [region]="region.nombre"
+                ></app-dias>
+            </ng-template>
+          </li>
+      </ng-container>
+    </ul>
+    
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</header>
