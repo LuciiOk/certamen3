@@ -85,5 +85,45 @@ export let listaRegiones:Region[] = [
                 clima: 'Tormenta'
             }
         ]
+    },
+    {
+        nombre: 'Bio Bio',
+        clima: [
+            {
+                dia: 'Lunes',
+                temperatura: 19,
+                clima: 'Soleado'
+            },
+            {
+                dia: 'Martes',
+                temperatura: 13,
+                clima: 'Tormenta'
+            },
+            {
+                dia: 'Miercoles',
+                temperatura: 12,
+                clima: 'Tormenta'
+            },
+            {
+                dia: 'Jueves',
+                temperatura: 14,
+                clima: 'Nublado'
+            },
+            {
+                dia: 'Viernes',
+                temperatura: 15,
+                clima: 'Nublado'
+            },
+            {
+                dia: 'Sabado',
+                temperatura: 12,
+                clima: 'Lluvioso'
+            },
+            {
+                dia: 'Domingo',
+                temperatura: 10,
+                clima: 'Lluvioso'
+            }
+        ]
     }
 ]

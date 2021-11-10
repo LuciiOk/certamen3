@@ -79,4 +79,86 @@ export let climas:Region[] = [{
             clima: 'Tormenta'
         }
     ]
-}]
+
+},
+{
+    nombre: 'Bio Bio',
+    clima: [
+        {
+            dia: 'Lunes',
+            temperatura: 20,
+            clima: 'Soleado'
+        },
+        {
+            dia: 'Martes',
+            temperatura: 20,
+            clima: 'Nublado'
+        },
+        {
+            dia: 'Miercoles',
+            temperatura: 20,
+            clima: 'Tormenta'
+        },
+        {
+            dia: 'Jueves',
+            temperatura: 20,
+            clima: 'Tormenta'
+        },
+        {
+            dia: 'Viernes',
+            temperatura: 20,
+            clima: 'Nublado'
+        },
+        {
+            dia: 'Sabado',
+            temperatura: 20,
+            clima: 'Nublado'
+        },
+        {
+            dia: 'Domingo',
+            temperatura: 20,
+            clima: 'Lluvioso'
+        }
+    ]
+},
+{
+    nombre: 'Araucanía',
+    clima: [
+        {
+            dia: 'Lunes',
+            temperatura: 20,
+            clima: 'Nublado'
+        },
+        {
+            dia: 'Martes',
+            temperatura: 20,
+            clima: 'Nublado'
+        },
+        {
+            dia: 'Miercoles',
+            temperatura: 20,
+            clima: 'Soleado'
+        },
+        {
+            dia: 'Jueves',
+            temperatura: 20,
+            clima: 'Nublado'
+        },
+        {
+            dia: 'Viernes',
+            temperatura: 20,
+            clima: 'Lluvioso'
+        },
+        {
+            dia: 'Sabado',
+            temperatura: 20,
+            clima: 'Soleado'
+        },
+        {
+            dia: 'Domingo',
+            temperatura: 20,
+            clima: 'Soleado'
+        }
+    ]
+}
+]

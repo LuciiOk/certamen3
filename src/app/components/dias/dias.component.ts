@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router, ActivatedRoute} from '@angular/router';
 import { Clima } from 'src/app/clima';
 
 @Component({
@@ -15,7 +16,7 @@ export class DiasComponent implements OnInit {
   @Input()
   region:any;
 
-  constructor() { }
+  constructor(private route: Router, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log(this.climas)
@@ -23,5 +24,8 @@ export class DiasComponent implements OnInit {
 
   celciusFahrenheit (temp:number):number {
     return (temp * 1.8) + 32;
+  }
+
+  redirigir() {
   }
 }
