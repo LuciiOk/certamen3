@@ -74,15 +74,11 @@
                     * obligatorio
                   </div>
             </div>
-            
-
-
             <div *ngIf="formulario.controls['Grados'].invalid && (formulario.controls['Grados'].dirty || formulario.controls['Grados'].touched)" class="invalid-feedback">
                 <div *ngIf="formulario.controls['Grados'].hasError('required')">
                 * Selecciona una opción
                 </div>
             </div>
-            <br>
             <label for="Estado"> Grados </label><br>
             <div class="form-check">
                 <input type="radio" value="celsius" formControlName="Grados" class="form-check-input"  id="Grados1" name="Grados"
@@ -97,11 +93,6 @@
                 >
                 <label for="Grados2" class="form-check-label">fahrenheit</label>
             </div>
-
-            <div >
-
-            </div>    
-
             <div class="container">
                 <div class="row text-center">
                     <div class="col text-center">
