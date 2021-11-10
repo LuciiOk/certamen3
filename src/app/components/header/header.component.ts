@@ -23,6 +23,5 @@ export class HeaderComponent implements OnInit {
 
   convertir(valor:boolean) {
     this.celsius = valor;
-    console.log(this.celsius)
   }
 }

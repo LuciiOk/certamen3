@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { listaRegiones, Region } from 'src/app/region';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Clima } from 'src/app/clima';
+import { ClimasService } from 'src/app/services/climas.service';
 
 @Component({
   selector: 'app-climas',
@@ -9,17 +10,22 @@ import { Clima } from 'src/app/clima';
   styleUrls: ['./climas.component.scss']
 })
 export class ClimasComponent implements OnInit {
-  listaRegion:Region[] = listaRegiones;
+  public climasService:ClimasService;
+  listaRegion:Region[] = [];
   celsius:boolean= true;
+  region:string = '';
   listaClima:Clima[] = []
   
   constructor(private rutaActiva:ActivatedRoute) {
+    this.climasService = new ClimasService();
   }
 
   ngOnInit(): void {
-    this.listaClima = this.listaRegion
-      .find((element:Region) => element.nombre == this.rutaActiva.snapshot.params.id)?.clima || []
-    console.log(this.rutaActiva.snapshot.params.id)
-    console.log(this.listaClima)
+    this.listaRegion = this.climasService.getClimas();
+    this.rutaActiva.paramMap.subscribe((params:ParamMap) =>{
+      this.region = params.get('region') || ''
+      this.listaClima = this.listaRegion
+      .find((element:Region) => element.nombre === params.get('region'))?.clima || []
+    })
   }
 }

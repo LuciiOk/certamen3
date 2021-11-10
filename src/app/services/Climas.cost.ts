@@ -122,7 +122,7 @@ export let climas:Region[] = [{
     ]
 },
 {
-    nombre: 'Araucanía',
+    nombre: 'Araucania',
     clima: [
         {
             dia: 'Lunes',

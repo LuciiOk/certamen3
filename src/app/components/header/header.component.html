@@ -24,7 +24,7 @@
     <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs" id="regiones">
       <ng-container *ngFor="let region of listaRegion">
           <li [ngbNavItem]="region">
-            <a ngbNavLink>
+            <a ngbNavLink [routerLink]="['/climas',region.nombre]" >
               {{region.nombre}}
             </a>
             <ng-template ngbNavContent >
@@ -38,5 +38,5 @@
       </ng-container>
     </ul>
     
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  <!-- <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
 </header>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import { ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, ParamMap, Router} from '@angular/router';
 import { ClimasService } from 'src/app/services/climas.service';
 
 @Component({
@@ -23,10 +23,13 @@ export class ActualizarComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.rutaActiva.paramMap.subscribe((  params:ParamMap) => {
+      console.log(params.get('region'))
+    })
   }
 
   enviarDatos(){
     this.climasService.actualizarClimas(this.formulario.value);
-    this.ruta.navigate(['']);
+    this.ruta.navigate(['/climas'])
   }
 }

@@ -19,13 +19,9 @@ export class DiasComponent implements OnInit {
   constructor(private route: Router, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.climas)
   }
 
   celciusFahrenheit (temp:number):number {
     return (temp * 1.8) + 32;
-  }
-
-  redirigir() {
   }
 }
