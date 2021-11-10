@@ -15,13 +15,15 @@ export class ClimasComponent implements OnInit {
   celsius:boolean= true;
   region:string = '';
   listaClima:Clima[] = []
-  
+
   constructor(private rutaActiva:ActivatedRoute) {
     this.climasService = new ClimasService();
   }
 
   ngOnInit(): void {
     this.listaRegion = this.climasService.getClimas();
+    this.celsius = this.climasService.getConvert()
+    console.log(this.celsius)
     this.rutaActiva.paramMap.subscribe((params:ParamMap) =>{
       this.region = params.get('region') || ''
       this.listaClima = this.listaRegion

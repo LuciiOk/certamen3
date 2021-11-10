@@ -9,12 +9,24 @@ import {climas} from './Climas.cost'
 export class ClimasService {
 
   private climas:Region[] = climas;
+  grado:boolean = true;
 
   constructor() { }
 
   getClimas():Region[]{
     return this.climas;
   }
+
+  getConvert() {
+    return this.grado;
+  }
+
+  convert(valor:boolean) {
+    console.log(this.grado)
+    this.grado = valor;
+  }
+
+
 
   actualizarClimas(climasActualizar:any) {
     climas.forEach((region:Region) => {
