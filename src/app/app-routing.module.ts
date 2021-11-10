@@ -6,6 +6,7 @@ import { ClimasComponent } from './pages/climas/climas.component';
 const routes: Routes = [
   {path: 'climas/:region', component:ClimasComponent},
   {path: 'actualizar/:region/:dia', component:ActualizarComponent},
+  {path: 'actualizar/:region/:dia/:con', component:ActualizarComponent},
   {path: '**', redirectTo: 'climas/Valparaiso', pathMatch:'full'},
 ];
 

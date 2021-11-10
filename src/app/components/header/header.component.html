@@ -27,16 +27,7 @@
             <a ngbNavLink [routerLink]="['/climas',region.nombre]" >
               {{region.nombre}}
             </a>
-            <ng-template ngbNavContent >
-                <app-dias 
-                  [climas]="region.clima" 
-                  [celsius]="this.celsius"
-                  [region]="region.nombre"
-                ></app-dias>
-            </ng-template>
           </li>
       </ng-container>
     </ul>
-    
-  <!-- <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
 </header>

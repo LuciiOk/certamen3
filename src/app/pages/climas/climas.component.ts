@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { listaRegiones, Region } from 'src/app/region';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Clima } from 'src/app/clima';
