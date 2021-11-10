@@ -5,13 +5,7 @@
                 <h5 class="card-title">{{clima.dia}}</h5>
                 <img class="card-img-top" src="../../../assets/clima{{clima.clima}}.png" alt="{{clima.clima}}">
                 <div class="card-body">
-                    <p class="card-text"
-                        *ngIf="celsius"
-                    >{{clima.temperatura}}º</p>
-                    <p class="card-text"
-                        *ngIf="!celsius"
-                    >{{celciusFahrenheit(clima.temperatura)}}º</p>
-                    <p class="card-text">{{clima.clima}}</p>
+                    <p>{{clima.temperatura}}º</p>
                 </div>
             </div>
         </a>

@@ -20,8 +20,4 @@ export class DiasComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  celciusFahrenheit (temp:number):number {
-    return (temp * 1.8) + 32;
-  }
 }
