@@ -30,6 +30,6 @@ export class ActualizarComponent implements OnInit {
 
   enviarDatos(){
     this.climasService.actualizarClimas(this.formulario.value);
-    this.ruta.navigate(['/climas'])
+    this.ruta.navigate(['/climas',this.formulario.value.Region])
   }
 }
