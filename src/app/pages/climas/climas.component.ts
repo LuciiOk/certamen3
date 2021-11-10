@@ -12,7 +12,7 @@ import { ClimasService } from 'src/app/services/climas.service';
 export class ClimasComponent implements OnInit {
   public climasService:ClimasService;
   listaRegion:Region[] = [];
-  celsius:boolean= true;
+  celsius:any;
   region:string = '';
   listaClima:Clima[] = []
 
@@ -25,6 +25,7 @@ export class ClimasComponent implements OnInit {
     this.celsius = this.climasService.getConvert()
     console.log(this.celsius)
     this.rutaActiva.paramMap.subscribe((params:ParamMap) =>{
+      
       this.region = params.get('region') || ''
       this.listaClima = this.listaRegion
       .find((element:Region) => element.nombre === params.get('region'))?.clima || []

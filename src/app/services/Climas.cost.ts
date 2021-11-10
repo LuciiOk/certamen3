@@ -162,3 +162,5 @@ export let climas:Region[] = [{
     ]
 }
 ]
+
+export let celsius:boolean = true;

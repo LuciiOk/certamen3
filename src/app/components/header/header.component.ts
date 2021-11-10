@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   listaRegion:Region[] = [];
   celsius:boolean= true;
   active:any;
-  constructor() { 
+  constructor(private servicio:ClimasService) { 
     this.climasService = new ClimasService();
   }
 
@@ -22,6 +22,10 @@ export class HeaderComponent implements OnInit {
   }
 
   convertir(valor:boolean) {
-    this.celsius = valor;
+      if (this.celsius !== valor) {
+        this.celsius = valor;
+        this.servicio.convert(this.celsius);
+      }
+      
   }
 }

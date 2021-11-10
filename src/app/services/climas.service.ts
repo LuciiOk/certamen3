@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Clima } from '../clima';
 import { Region } from '../region';
-import {climas} from './Climas.cost'
+import {climas, celsius} from './Climas.cost'
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import {climas} from './Climas.cost'
 export class ClimasService {
 
   private climas:Region[] = climas;
-  grado:boolean = true;
+  grado:boolean = celsius;
 
   constructor() { }
 
@@ -17,16 +17,26 @@ export class ClimasService {
     return this.climas;
   }
 
-  getConvert() {
+  getConvert():boolean {
     return this.grado;
   }
 
   convert(valor:boolean) {
-    console.log(this.grado)
-    this.grado = valor;
+    this.grado = valor
+    if (!valor) {
+      climas.forEach((region:Region) => {
+        region.clima.forEach((clima:Clima) => {
+          clima.temperatura = (clima.temperatura * 1.8) + 32;
+        })
+      })
+    } else {
+      climas.forEach((region:Region) => {
+        region.clima.forEach((clima:Clima) => {
+          clima.temperatura = (clima.temperatura - 32) / 1.8;
+        })
+      })
+    }
   }
-
-
 
   actualizarClimas(climasActualizar:any) {
     climas.forEach((region:Region) => {
